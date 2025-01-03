@@ -43,7 +43,7 @@ export function createNav() {
   const githubButton = document.createElement("a");
   githubButton.classList.add("github-button");
   githubButton.textContent = "View on Github";
-  githubButton.href = "https://github.com/Valex99/todo-list";
+  githubButton.href = "https://github.com/Valex99/todo-list1";
 
   navDiv.appendChild(icon);
   navDiv.appendChild(title);
