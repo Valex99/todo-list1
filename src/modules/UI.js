@@ -4,7 +4,6 @@ import plusIcon from "../icons/plus.png";
 import projectIcon from "../images/check-icon.png";
 import {
   addProject,
-  getAllProjects,
   getLastAddedProject,
   removeProject,
   initializeDefaultProject,
@@ -19,7 +18,6 @@ import {
 } from "./logic.js";
 
 let selected = null;
-let selectedTask = null;
 const content = document.getElementById("content");
 const html = document.querySelector("html");
 
@@ -268,8 +266,6 @@ function renderNewProject() {
 
   if (taskAmount(selected) === 0 && noTasksDivMessageExists === false) {
     noTasksDivMessage();
-  } else {
-    console.log("task amount is bigger than 0");
   }
 
   taskCounter.textContent = taskAmount(selected);
@@ -515,7 +511,7 @@ function displayTaskModal() {
 
     addTaskToSelectedProject(selected, description, priority);
 
-    selectedTask = description;
+    //selectedTask = description;
     // add code here to push description and priority into array
     const selectedProject = document.querySelector(".selected");
     const selectedTaskCounter = selectedProject.querySelector(".task-counter");
@@ -727,19 +723,14 @@ function appendTaskIcons(taskElement) {
 
   // ADD EVENT LISTENER TO MAKE TASK MARKED
   taskElement.addEventListener("click", function (e) {
-    const taskElement = e.target.closest(".task");
-    const taskName = taskElement.textContent;
+    //const taskElement = e.target.closest(".task");
+    //const taskName = taskElement.textContent;
 
     // ON THE CLICK ->
     // Call function that checks for specific project IF that task is completed
     // Add to tasks array marked boolean
-
     console.log("Task element with task name:", taskName, "clicked");
   });
 }
 
-//1 Create local storage!
-
-//2 FIGURE IT OUT WITH GIT...
-
-//3 Click on the task should add it to completed - line over text, less opacity
+// Click on the task should add it to completed - line over text, less opacity

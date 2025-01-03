@@ -13,10 +13,6 @@ function addProject(name) {
   return newProject;
 }
 
-function getAllProjects() {
-  return projects;
-}
-
 function removeProject(name) {
   const index = projects.findIndex((project) => project.name === name);
   if (index !== -1) {
@@ -25,7 +21,7 @@ function removeProject(name) {
 }
 
 function initializeDefaultProject() {
-  const allProjects = getAllProjects();
+  const allProjects = projects;
   if (allProjects.length === 0) {
     addProject("Default Project");
   }
@@ -142,7 +138,6 @@ function sortTasksByPriority(selectedProject) {
 // I could make a function for finding / querying project name since i use it often in here
 export {
   addProject,
-  getAllProjects,
   removeProject,
   initializeDefaultProject,
   getLastAddedProject,
@@ -155,13 +150,3 @@ export {
   changeTaskName,
   checkForDuplication,
 };
-
-// Figure out how can you import all of those three things to UI module.
-
-// WHAT SHOULD HAPPEN WHEN A CERTAIN PROJECT IS CLICKED?
-// 1) Selected element should get highlighted
-// DONE //  Div below nav bar should get name of clicked project
-// Edit and Delete icons should work for that specific project
-// Bin icon should NOT work if this is the ONLY project in the projects arr
-
-// Make sure the last created project is always selected
